@@ -1,5 +1,5 @@
 {
-  "name": "next-auth",
+  "name": "@alexanderlee/next-auth",
   "version": "4.24.5",
   "description": "Authentication for Next.js",
   "homepage": "https://next-auth.js.org",
@@ -92,6 +92,7 @@
     "@panva/hkdf": "^1.0.2",
     "cookie": "^0.5.0",
     "jose": "^4.11.4",
+    "navigator.locks": "^0.8.6",
     "oauth": "^0.9.15",
     "openid-client": "^5.4.0",
     "preact": "^10.6.3",

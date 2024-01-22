@@ -11,7 +11,7 @@
   "main": "dist/index.js",
   "license": "ISC",
   "keywords": [
-    "next-auth",
+    "@alexanderlee/next-auth",
     "next.js",
     "oauth",
     "upstash",
@@ -31,7 +31,7 @@
   ],
   "peerDependencies": {
     "@upstash/redis": "^1.0.1",
-    "next-auth": "^4"
+    "@alexanderlee/next-auth": "^4"
   },
   "devDependencies": {
     "@next-auth/adapter-test": "workspace:*",
@@ -41,7 +41,7 @@
     "dotenv": "^10.0.0",
     "isomorphic-fetch": "3.0.0",
     "jest": "^27.4.3",
-    "next-auth": "workspace:*"
+    "@alexanderlee/next-auth": "workspace:*"
   },
   "dependencies": {
     "uuid": "^8.3.2"

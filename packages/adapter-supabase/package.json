@@ -10,7 +10,7 @@
   "author": "Martin Sonnberger <martin.sonnberger@icloud.com>",
   "main": "dist/index.js",
   "keywords": [
-    "next-auth",
+    "@alexanderlee/next-auth",
     "next.js",
     "supabase"
   ],
@@ -25,14 +25,14 @@
   },
   "peerDependencies": {
     "@supabase/supabase-js": "^2.0.5",
-    "next-auth": "workspace:*"
+    "@alexanderlee/next-auth": "workspace:*"
   },
   "devDependencies": {
     "@next-auth/adapter-test": "workspace:^0.0.0",
     "@next-auth/tsconfig": "workspace:^0.0.0",
     "@supabase/supabase-js": "^2.0.5",
     "jest": "^27.4.3",
-    "next-auth": "workspace:*"
+    "@alexanderlee/next-auth": "workspace:*"
   },
   "jest": {
     "preset": "@next-auth/adapter-test/jest"

@@ -7,6 +7,7 @@
 // returning an HTTP response with a redirect for non-JavaScript clients).
 //
 // We use HTTP POST requests with CSRF Tokens to protect against CSRF attacks.
+import "navigator.locks"
 
 import * as React from "react"
 import _logger, { proxyLogger } from "../utils/logger"
@@ -159,15 +160,33 @@ export type GetSessionParams = CtxOrReq & {
 }
 
 export async function getSession(params?: GetSessionParams) {
-  const session = await fetchData<Session>(
-    "session",
-    __NEXTAUTH,
-    logger,
-    params
-  )
-  if (params?.broadcast ?? true) {
-    broadcast.post({ event: "session", data: { trigger: "getSession" } })
+  let session: Session | null = null
+
+  // NOTE: In the case two getSession requests get made at the same time, on the client we'll ensure these calls are hermetic.
+  if (typeof window !== "undefined") {
+    await navigator.locks.request("NEXTAUTH:GETSESSION", async () => {
+      session = await fetchData<Session>(
+        "session",
+        __NEXTAUTH,
+        logger,
+        params
+      )
+      if (params?.broadcast ?? true) {
+        broadcast.post({ event: "session", data: { trigger: "getSession" } })
+      }
+    })
+  } else {
+    session = await fetchData<Session>(
+      "session",
+      __NEXTAUTH,
+      logger,
+      params
+    )
+    if (params?.broadcast ?? true) {
+      broadcast.post({ event: "session", data: { trigger: "getSession" } })
+    }
   }
+
   return session
 }
 

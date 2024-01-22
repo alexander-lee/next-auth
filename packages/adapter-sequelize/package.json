@@ -11,7 +11,7 @@
   "main": "dist/index.js",
   "license": "ISC",
   "keywords": [
-    "next-auth",
+    "@alexanderlee/next-auth",
     "next.js",
     "oauth",
     "sequelize"
@@ -29,14 +29,14 @@
     "dist"
   ],
   "peerDependencies": {
-    "next-auth": "^4",
+    "@alexanderlee/next-auth": "^4",
     "sequelize": "^6.6.5"
   },
   "devDependencies": {
     "@next-auth/adapter-test": "workspace:*",
     "@next-auth/tsconfig": "workspace:*",
     "jest": "^27.4.3",
-    "next-auth": "workspace:*",
+    "@alexanderlee/next-auth": "workspace:*",
     "sequelize": "^6.6.5"
   },
   "jest": {
